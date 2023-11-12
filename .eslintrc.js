@@ -44,16 +44,7 @@ module.exports = {
     'consistent-default-export-name/default-export-match-filename': [2, [null, 'camel']],
     'consistent-default-export-name/default-import-match-filename': [1, { ignorePaths: ['**/*.module.css'] }],
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:vitest/recommended',
-    'plugin:import/recommended',
-    '@betterplace/eslint-config-base',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:vitest/recommended', 'plugin:import/recommended', '@betterplace/eslint-config-base', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:jsx-a11y/recommended', 'plugin:storybook/recommended'],
   overrides: [
     {
       files: ['**/*.{ts,tsx}'],
