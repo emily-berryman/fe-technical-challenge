@@ -1,8 +1,7 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta } from '@storybook/react'
 import MoneyInput from './MoneyInput'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-// Export a default object with a title and which component to use
 export default {
   title: 'Components/MoneyInput',
   component: MoneyInput,
@@ -13,44 +12,61 @@ export default {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
+  argTypes: {
+    hoverStyle: {
+      control: "boolean"
+    },
+    focusStyle: {
+      control: "boolean"
+    },
+    errorStyle: {
+      control: "boolean"
+    },
+    disabledStyle: {
+      control: "boolean"
+    },
+    isLabel: {
+      control: "boolean"
+    },
+  },
 } satisfies Meta<typeof MoneyInput>
-// type Story = StoryObj<typeof MoneyInput/>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-// Each named export is a story. It's contents specify how the story is rendered in addition to other config options.
-// Args are inputs that are passed to the component, which Storybook uses to render the component in different states. In React, args = props. They also specify the inital control values for the story. 
-
+// MoneyInput Stories
 export const Default = {
   args: {
-    inputLabel: "Default"
+    inputState: "Default",
+    locale: "EN"
   }
 }
 
 export const Hover = {
   args: {
-    inputLabel: "Hover",
+    ...Default.args,
+    inputState: "Hover",
     hoverStyle: true,
   }
 }
 
 export const Focus = {
   args: {
-    inputLabel: "Focus",
+    ...Default.args,
+    inputState: "Focus",
     focusStyle: true,
   }
 }
 
 export const Error = {
   args: {
-    inputLabel: "Error",
+    ...Default.args,
+    inputState: "Error",
     errorStyle: true,
   }
 }
 
 export const ErrorAndHover = {
   args: {
-    inputLabel: "Error + Hover",
+    ...Default.args,
+    inputState: "Error + Hover",
     errorStyle: true,
     hoverStyle: true,
   }
@@ -58,24 +74,36 @@ export const ErrorAndHover = {
 
 export const ErrorAndFocus = {
   args: {
-    inputLabel: "Error + Focus",
+    ...Default.args,
+    inputState: "Error + Focus",
     errorStyle: true,
-    focusStyle: true
+    focusStyle: true,
+    locale: "DE"
   }
 }
 
 export const Disabled = {
   args: {
-    inputLabel: "Disabled",
-    disabledStyle: true
+    ...Default.args,
+    inputState: "Disabled",
+    disabledStyle: true,
   }
 }
 
 export const DisabledAndFocus = {
   args: {
-    inputLabel: "Disabled + Focus",
+    ...Default.args,
+    inputState: "Disabled + Focus",
     disabledStyle: true, 
-    focusStyle: true
+    focusStyle: true,
+  }
+}
+
+export const Label = {
+  args: {
+    ...Default.args,
+    inputState: "Default Label",
+    isLabel: true,
   }
 }
 
