@@ -1,0 +1,68 @@
+@import '../tokens.css';
+
+.labelStateContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 25rem;
+  border: 1px dashed rgb(126, 88, 210, 0.5);
+  padding: 1rem 1rem 2rem;
+  border-radius: var(--betterplace-dimension--3);
+}
+
+.inputStateContainer {
+  display: flex;
+  gap: 1rem;
+  width: 25rem;
+  align-items: center;
+}
+
+.defaultLabel {
+  font: var(--betterplace-typography-xs);
+  font-weight: var(--betterplace-font-weights-bold);
+}
+
+.inputStateLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font: var(--betterplace-typography-xs);
+  color: var(--betterplace-color-gray-900);
+}
+
+.moneyInput {
+  font:  var(--betterplace-typography-base);
+  color: var(--betterplace-external-color-red-sparkasse);
+  padding: 0.4rem var(--betterplace-dimension-1); 
+  border: 1px solid var(--betterplace-color-gray-300);
+  border-radius:  var(--betterplace-dimension--3);
+  color: var(--betterplace-color-gray-900);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.moneyInput::placeholder {
+  color: var(--betterplace-color-gray-900);
+}
+
+.moneyInput:hover, .moneyInputHoverState {
+  box-shadow: var(--betterplace-shadow-outer-neutral-hard-2);
+}
+
+.moneyInput:focus, .moneyInputFocusState {
+  outline: 1px solid var(--betterplace-color-green-800);
+  outline-offset: 1px;
+}
+
+.moneyInputErrorState {
+  border: 2px solid var(--betterplace-color-red-600);
+}
+
+.moneyInputDisabledState {
+  background-color: var(--betterplace-color-gray-100);
+}
+
+.moneyInput.moneyInputDisabledState {
+  color: var(--betterplace-color-gray-400);
+}
+
